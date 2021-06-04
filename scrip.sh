@@ -1,5 +1,3 @@
 #!/bin/sh
-sudo rm -f /etc/yum.repos.d/bintray-rpm.repo
-curl -L https://www.scala-sbt.org/sbt-rpm.repo > sbt-rpm.repo
-sudo mv sbt-rpm.repo /etc/yum.repos.d/
-sudo yum install sbt
+curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm.repo
+yum install sbt
